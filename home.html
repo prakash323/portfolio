@@ -1058,18 +1058,64 @@
                 flex: 0 0 300px;
             }
         }
+
+        /* Fixed Resume Download Button Below Name - Small Version */
+        .resume-btn-fixed {
+    position: fixed;
+    top: 80px; /* Adjust as needed */
+    left: 40px;
+    z-index: 1200;
+    display: inline-flex;
+    align-items: center;
+    background: rgba(77, 171, 247, 0.18); /* semi-transparent blue */
+    color: var(--white);
+    padding: 6px 14px;         /* Smaller padding */
+    border-radius: var(--radius);
+    font-size: 0.92rem;        /* Smaller font */
+    font-weight: 500;
+    text-decoration: none;
+    box-shadow: 0 4px 16px rgba(77, 171, 247, 0.15);
+    transition: var(--transition);
+    border: 1px solid rgba(255,255,255,0.25);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+.resume-btn-fixed i {
+    margin-right: 6px;
+    font-size: 1rem;           /* Smaller icon */
+}
+.resume-btn-fixed:hover {
+    background: rgba(77, 171, 247, 0.35);
+    color: var(--white);
+    transform: translateY(-2px) scale(1.04);
+    box-shadow: 0 6px 24px rgba(77, 171, 247, 0.25);
+}
+
+@media (max-width: 768px) {
+    .resume-btn-fixed {
+        left: 10px;
+        top: 70px;
+        padding: 6px 10px;
+        font-size: 0.9rem;
+    }
+}
     </style>
 </head>
 <body>
     <!-- Header -->
     <header id="header">
-        <div class="container navbar">
-            <a href="#" class="logo">Sathya<span>P</span></a>
+        <div class="container navbar" style="position: relative;">
+            <div style="display: flex; flex-direction: column; align-items: flex-start;">
+                <a href="#" class="logo">Sathya<span>Prakash</span></a>
+                <a href="sathya resume.pdf" class="resume-btn-fixed" target="_blank" download>
+                    <i class="fas fa-file-download"></i> DOWNLOAD PDF
+                </a>
+            </div>
             <button class="menu-btn" id="menuBtn">
                 <i class="fas fa-bars"></i>
             </button>
             <ul class="nav-links" id="navLinks">
-                <button class="close-menu" id="closeMenu" >
+                <button class="close-menu" id="closeMenu">
                     <i class="fas fa-times"></i>
                 </button>
                 <li><a href="#home">Home</a></li>
@@ -1087,6 +1133,7 @@
     <!-- Hero Section -->
     <section id="home" class="hero section" >
         <div class="container hero-content">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
             <p class="hero-greeting">Hello, I'm</p>
             <h1 class="hero-title">Sathya Prakash Dorasanipalle</h1>
             <p class="hero-subtitle">WEB DEVELOPER | DATA & AI-ML ENTHUSIAST | SOFTWARE DEVELOPER </p>
@@ -1110,7 +1157,7 @@
                 </div>
                 <div class="about-text fade-in">
                     <h3>DATA & AI-ML ENTHUSIAST</h3>
-                    <p font="Roboto">Third-year B.Tech student in Computer Science (Data Analytics) at VIT-AP with a 8.54 CGPA. Passionate about AI, ML, and Data Science, skilled in Python, Java, JavaScript, SQL, and TensorFlow. Experienced in scalable apps, AI/ML research (e.g., MedAI, cervical cancer prediction), and leading tech initiatives as CSI Chapter Vice President. Eager to contribute to innovative solutions at Google.</p>
+                    <p font="Roboto">I am a third-year B.Tech student in Computer Science (Data Analytics) at VIT-AP, with an 8.54 CGPA. I have a strong interest in AI, ML, and Data Science, with proficiency in Python, Java, JavaScript, SQL, and TensorFlow. My experience includes developing scalable applications and contributing to AI/ML research projects, such as a medical AI tool and a cervical cancer prediction model. As Vice President of the CSI Chapter, I have led various tech initiatives. I am eager to apply my skills to drive innovative solutions</p>
                     <p>I love solving Data structure problems. I do competative coding aswell, would love to mentor my techniques.</p>
                     <div class="stats">
                         <div class="stat-item">
@@ -1118,12 +1165,20 @@
                             <div class="stat-title">CGPA</div>
                         </div>
                         <div class="stat-item">
-                            <div class="stat-number">15+</div>
+                            <div class="stat-number">5+</div>
                             <div class="stat-title">Projects</div>
                         </div>
                         <div class="stat-item">
                             <div class="stat-number">200+</div>
                             <div class="stat-title">Leetcode Problems Solved</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">1</div>
+                            <div class="stat-title">Research Paper</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">1</div>
+                            <div class="stat-title">Book Chapter</div>
                         </div>
                     </div>
                 </div>
@@ -1141,7 +1196,6 @@
                         <li>JavaScript</li>
                         <li>HTML</li>
                         <li>CSS</li>
-                        <li>SQL</li>
                         <li>Java</li>
                         <li>Python</li>
                         <li>C</li>
@@ -1168,19 +1222,12 @@
                     <h3><i class="fas fa-tools"></i> Tools</h3>
                     <ul class="skill-list">
                         <li>VS Code</li>
+                        <li>Figma</li>
                         <li>IntelliJ</li>
                         <li>Jupyter Notebook</li>
-                        <li>Postman</li>
                         <li>Anaconda</li>
                         <li>GitHub</li>
                         <li>Google collab</li>
-                    </ul>
-                </div>
-                <div class="skill-category fade-in">
-                    <h3><i class="fas fa-cloud"></i> Cloud</h3>
-                    <ul class="skill-list">
-                        <li>AWS (EC2, S3, RDS)</li>
-                        <li>Firebase</li>
                     </ul>
                 </div>
             </div>
@@ -1194,34 +1241,29 @@
                 <div class="projects-scroll" id="projectsScroll">
                     <div class="project-card">
     <div class="project-content">
-        <h3 class="project-title">University Website Development</h3>
+        <h3 class="project-title">EcoShield </h3>
         <div class="project-tags">
-            <span class="project-tag">WordPress</span>
-            <span class="project-tag">Elementor</span>
-            <span class="project-tag">Web Design</span>
+            <span class="project-tag"> Sensors</span>
+            <span class="project-tag">Arduino</span>
+            <span class="project-tag">Embedded C</span>
         </div>
-        <p class="project-desc">Designed and developed my university website using WordPress. The site features a responsive, user-centric interface with optimized navigation, ensuring seamless access to academic programs, campus events, and institutional resources.</p>
-        <div class="project-links">
-            <a href="https://youtu.be/afr3_nDm3aE" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
-        </div>
+        <p class="project-desc"> EcoShield is a real-time environmental monitoring system that collects and analyzes data
+ on air quality, temperature, and humidity using Arduino sensors. It automates data
+ processing with Embedded C, ensuring efficient monitoring for eco-friendly applications.</p>
+
     </div>
 </div>
-                    <div class="project-card">
+<div class="project-card">
     <div class="project-content">
-        <h3 class="project-title">Typewriting Speed Test Web App</h3>
+        <h3 class="project-title">MedAI</h3>
         <div class="project-tags">
-            <span class="project-tag">JavaScript</span>
-            <span class="project-tag">Web App</span>
-            <span class="project-tag">Typing Speed</span>
+                 <span class="project-tag">TensorFlow</span>
+                 <span class="project-tag">Flask</span>
+                 <span class="project-tag">React.js</span>
         </div>
         <p class="project-desc">
-            Built a fully functional typewriting speed test application using pure JavaScript. The app calculates Words Per Minute (WPM) in real-time, providing users with feedback on typing accuracy, speed, and performance analytics — all without any external libraries or frameworks.
+            MedAI is an AI-powered healthcare system using a multi-layer perceptron (MLP) to predict diseases from patient symptoms, aiding early detection and providing data-driven insights for professionals.
         </p>
-        <div class="project-links">
-            <a href="https://yaswanth65.github.io/Typing-Game/" target="_blank">
-                <i class="fas fa-external-link-alt"></i> Live Demo
-            </a>
-        </div>
     </div>
 </div>
 
@@ -1229,106 +1271,37 @@
                     <div class="project-card">
                         
                         <div class="project-content">
-                            <h3 class="project-title">NLP AI Powered Cypher Selection</h3>
+                            <h3 class="project-title">Dev Track</h3>
                             <div class="project-tags">
-                                <span class="project-tag">NLP</span>
-                                <span class="project-tag">Artificial Intelligence</span>
-                                <span class="project-tag">Cypher Query</span>
+                                    <span class="project-tag">MERN Stack</span>
+                                    <span class="project-tag">RESTful APIs</span>
+                                    <span class="project-tag">Authentication</span>
                             </div>
-                            <p class="project-desc">An AI-powered project that uses Natural Language Processing to intelligently select Cypher queries based on user input.</p>
-                            <div class="project-links">
-                                <a href="https://github.com/yaswanth65/nlp-cypher-selection" target="_blank"><i class="fab fa-github"></i> Code</a>
-                                <a href="https://youtu.be/5ehWgwREYsA?si=ezGaekHooUQDwOlZ" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
-                            </div>
+                            <p class="project-desc">DevTrack is a software engineering project management tool designed to track tasks, monitor progress, and streamline team collaboration. Built using MERN Stack, it features real-time updates, Kanban boards, and automated reporting to enhance productivity.</p>
                         </div>
                     </div>
                     <div class="project-card">
                         
                         <div class="project-content">
-                            <h3 class="project-title">Question Paper Management</h3>
+                            <h3 class="project-title">COA Knowledge Hub</h3>
                             <div class="project-tags">
                                 <span class="project-tag">HTML</span>
+                                <span class="project-tag">CSS</span>
                                 <span class="project-tag">JavaScript</span>
-                                <span class="project-tag">MongoDB</span>
                             </div>
-                            <p class="project-desc">Group Project, University question paper portal to download sem question papers and to upload them</p>
-                            <div class="project-links">
-                                <a href="#" target="_blank"><i class="fab fa-github"></i> Code</a>
-                                <a href="https://quexa.onrender.com/" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
-                            </div>
+                            <p class="project-desc">CoA Knowledge Hub is a web platform for learning Computer Organization and Architecture, offering interactive tutorials, quizzes, and a community forum. Built with a modern tech stack, it ensures seamless content access and real-time interaction.</p>
                         </div>
                     </div>
                     <div class="project-card">
                         
                         <div class="project-content">
-                            <h3 class="project-title">Chit-Chat Real-Time Chat App</h3>
+                            <h3 class="project-title">ACO Feature Selection</h3>
                             <div class="project-tags">
-                                <span class="project-tag">Node.js</span>
-                                <span class="project-tag">Socket.io</span>
-                                <span class="project-tag">OAuth</span>
+                                <span class="project-tag">ACO</span>
+                                <span class="project-tag">Feature Selection</span>
+                                <span class="project-tag">Machine Learning</span>
                             </div>
-                            <p class="project-desc">Real-time chat application with WebSockets and dynamic chat rooms</p>
-                            <div class="project-links">
-                                <a href="https://github.com/yaswanth65/chit-chat" target="_blank"><i class="fab fa-github"></i> Code</a>
-                                <a href="https://chat2-1-7k12.onrender.com" target="_blank"><i class="fab fa-github"></i> Website</a>
-                                <a href="https://youtu.be/1VDNuuw4W7c?si=7N0XjDSdwcWjlA8Z" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
-                            </div>
-                        </div>
-                    </div>
-                   
-                    
-                    <div class="project-card">
-                       
-                        <div class="project-content">
-                            <h3 class="project-title">Agri Link</h3>
-                            <div class="project-tags">
-                                <span class="project-tag">Node.js</span>
-                                <span class="project-tag">JavaScript</span>
-                                <span class="project-tag">MongoDB</span>
-                            </div>
-                            <p class="project-desc">A simple project with User authentication, A place where farmers can share their tools
-                            and Lenders can lend their tools
-                            </p>
-                            <div class="project-links">
-                                <a href="https://github.com/yaswanth65/agrilinkFarmerProject" target="_blank"><i class="fab fa-github"></i> Code</a>
-                                <a href="https://youtu.be/7OjjfSuBMBY?si=zzbjpcx8CKRhffmE" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
-                            </div>
-                        </div>
-                    </div>
-                   
-                    <div class="project-card">
-                        <div class="project-content">
-                            <h3 class="project-title">Vit Beginner Compass</h3>
-                            <div class="project-tags">
-                                <span class="project-tag">JavaScript</span>
-                                <span class="project-tag">HTML</span>
-                                <span class="project-tag">Bootstrap</span>
-                            </div>
-                            <p class="project-desc">
-                                A simple project designed for Freshser to learn the understand every process in Vit. It gathers all the information required like faculty details, registraion , maps, etc. We also included tools like chatBot, CGPA calculator etc.
-                            </p>
-                            <div class="project-links">
-                                <a href="https://github.com/your-username/vit-beginner-compass" target="_blank"><i class="fab fa-github"></i> Code</a>
-                                <a href="https://yaswanth65.github.io/vit-website/" target="_blank"><i class="fab fa-github"></i> Website</a>
-
-                                <a href="#" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-card">
-                        
-                        <div class="project-content">
-                            <h3 class="project-title">ML Tweet Analysis</h3>
-                            <div class="project-tags">
-                                <span class="project-tag">Flask</span>
-                                <span class="project-tag">Python</span>
-                                <span class="project-tag">ML</span>
-                            </div>
-                            <p class="project-desc">Machine learning model for tweet analysis with Flask API and real-time predictions</p>
-                            <div class="project-links">
-                                <a href="https://github.com/yaswanth65/yaswanth_twitterBot" target="_blank"><i class="fab fa-github"></i> Code</a>
-                                <a href="https://www.youtube.com/watch?v=uny108FtWEM" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
-                            </div>
+                            <p class="project-desc">ACO Feature Selection optimizes machine learning models by selecting relevant features using Ant Colony Optimization, enhancing prediction accuracy for applications like disease diagnosis.</p>
                         </div>
                     </div>
                 </div>
@@ -1351,16 +1324,16 @@
             <div class="timeline">
                 <div class="timeline-item fade-in">
                     <div class="timeline-content">
-                        <div class="timeline-date">Sept 2023 - Present</div>
+                        <div class="timeline-date">Present</div>
                         <h3 class="timeline-title">CSI CLUB AND CHAPTER</h3>
-                        <p class="timeline-desc">As Vice President of CSI Chapter at VIT-AP and former Lead of Competitive Coding at VCode, I’ve driven tech initiatives, including organizing the 100 days of coding in Java, hackathons, workshops, and HackerRank/CodeChef contests. Leading events and workshops, I’ve enhanced community coding skills. Mastered Java through projects like graph coloring, I’m now exploring web development (React, Node.js), advanced algorithms, and AWS, embracing lifelong learning.
+                        <p class="timeline-desc">As Vice President of one of VIT-AP's premier technical chapters, which has won multiple Best Chapter Awards, I have led efforts to organize large-scale hackathons, workshops, and events to foster innovation and technical learning. I have mentored students and significantly increased engagement in coding and tech initiatives.
 </p>
                     </div>
                 </div>
                 <div class="timeline-item fade-in">
                     <div class="timeline-content">
                         <div class="timeline-date">Dec 2023 - Present</div>
-                        <h3 class="timeline-title">Research Contributor - VIT-AP – Ethnus</h3>
+                        <h3 class="timeline-title">Research Contributor - VIT-AP</h3>
                         <p class="timeline-desc">Conducted research on ML algorithms for Cervical Cancer Prediction, focusing on model evaluation and optimization. Contributed to GAN-based Image Classification and Crop Optimization studies. Authored AI/ML book chapters and currently working on filing a patent for AI-driven innovations.</p>
                     </div>
                 </div>
@@ -1413,43 +1386,30 @@
             <h2 class="section-title fade-in">Certificates</h2>
             <div class="certificates-container">
                 <div class="certificate-card fade-in">
-                    <div class="certificate-image">
-                        <img src="./aws-academy-graduate-aws-academy-cloud-foundations (1).png" alt="AWS Certification">
-                    </div>
                     <div class="certificate-content">
-                        <h3 class="certificate-title">AWS Certified Solutions Architect – Associate</h3>
-                        <div class="certificate-issuer">Amazon Web Services</div>
-                        <div class="certificate-date">Summer 2023</div>
-                    </div>
-                </div>
-                <div class="certificate-card fade-in">
-                    <div class="certificate-image">
-                        <img src="./quexacontribWhatsApp Image 2025-04-27 at 13.12.16_028dc1e4.jpg" alt="Quexa Project Contribution">
-                    </div>
-                    <div class="certificate-content">
-                        <h3 class="certificate-title">Certificate of Appreciation - Quexa Project</h3>
-                        <div class="certificate-issuer">VIT-AP University</div>
-                        <div class="certificate-date">Fall Semester 2023-24</div>
+                        <h3 class="certificate-title">C  Certification</h3>
+                        <div class="certificate-issuer">Applogic Computer Institute</div>
+                        <div class="certificate-date">June 2023 - Aug 2023</div>
                     </div>
                 </div>
                 
                 <div class="certificate-card fade-in">
-                    <div class="certificate-image">
-                        <img src="./mernethnusWhatsApp Image 2025-04-27 at 13.13.48_de735bea.jpg" alt="MERN Full Stack Certification">
-                    </div>
                     <div class="certificate-content">
-                        <h3 class="certificate-title">MERN Full Stack Certification Program</h3>
-                        <div class="certificate-issuer">Ethnus</div>
-                        <div class="certificate-date">June 2024 - July 2024</div>
+                        <h3 class="certificate-title">First Place - UI/UX Design Competition</h3>
+                        <div class="certificate-issuer">VIT University</div>
+                        <div class="certificate-date">Feb 2024</div>
                     </div>
                 </div>
-                
                 <div class="certificate-card fade-in">
-                    <div class="certificate-image">
-                        <img src="./codecombatWhatsApp Image 2025-04-27 at 13.11.48_dd83f1f5.jpg" alt="Code Combat Winner">
-                    </div>
                     <div class="certificate-content">
-                        <h3 class="certificate-title">First Place - Code Combat Event</h3>
+                        <h3 class="certificate-title">Python Certification</h3>
+                        <div class="certificate-issuer">Applogic Computer Institute</div>
+                        <div class="certificate-date">May 2023 - June 2023</div>
+                    </div>
+                </div>  
+                <div class="certificate-card fade-in">
+                    <div class="certificate-content">
+                        <h3 class="certificate-title">First Place -  Code Sprint Challenge</h3>
                         <div class="certificate-issuer">CSI Chapter VIT-AP</div>
                         <div class="certificate-date">November 2023</div>
                     </div>
@@ -1515,7 +1475,7 @@
             <div class="footer-container">
                 <div class="footer-about">
                     <h3>Sathya Prakash Dorasanipalle</h3>
-                    <p>A passionate MERN Full Stack Developer and Computer Science student based in Vijayawada, India.</p>
+                    <p>A passionate Computer Science student,UI/UX Designer and AI/ML developer based in Amaravati, India.</p>
                     <div class="social-links">
                         <a href="https://linkedin.com/in/sathyaprakashdorasanipalle" target="_blank"><i class="fab fa-linkedin-in"></i></a>
                         <a href="https://github.com/prakash323" target="_blank"><i class="fab fa-github"></i></a>
@@ -1544,7 +1504,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 sathya Prakash Dorasanipalle. All rights reserved.</p>
+                <p>&copy; 2025 Sathya Prakash Dorasanipalle. All rights reserved.</p>
             </div>
         </div>
     </footer>
